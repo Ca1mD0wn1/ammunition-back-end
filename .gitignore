@@ -1,0 +1,4 @@
+db/databaseCtrol.ts
+node_modules/
+app.ts
+package-lock.json
