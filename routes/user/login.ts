@@ -19,7 +19,6 @@ router.post('/', async function (req, res, next) {
         console.log('isMatch', isMatch);
 
         if (result.length == 1 && result[0].username == obj.username) {
-            console.log(isMatch);
             if (isMatch) {
                 let token = jwt.sign(obj.username, '__清酒__');
                 console.log(token);
