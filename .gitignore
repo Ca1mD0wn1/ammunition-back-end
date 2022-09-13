@@ -2,3 +2,10 @@ node_modules/
 app.ts
 package-lock.json
 da/hgpdatabaseCtrol.ts
+=======
+db/databaseCtrol.ts
+node_modules/
+app.ts
+package-lock.json
+.gitignore
+
