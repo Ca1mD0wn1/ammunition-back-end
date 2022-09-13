@@ -13,7 +13,6 @@ function checkUser(obj: IData): Promise<[]> {
     for (let k in obj) {
         sql += ` and ${k}='${obj[k]}'`
     }
-    console.log(sql);
 
     return new Promise(function (resovle, reject) {
         db.query(sql, function (error, result, fields) {
@@ -36,7 +35,6 @@ function regUser(data: IData): Promise<boolean> {
             if (error) {
                 reject(false);
             } else {
-                console.log('result', result);
                 resovle(true);
             }
         })
