@@ -124,7 +124,18 @@ function insertShopCarId(goods_id: number, goods_count: number): Promise<boolean
     })
 }
 
-
+function shopCarCount(): Promise<boolean> {
+    let sqlStr = `SELECT * FROM shopcar`;
+    return new Promise(function (resolve, reject) {
+        dbConn.query(sqlStr, function (err, result) {
+            if (err) {
+                reject(err)
+            } else {
+                resolve(result)
+            }
+        })
+    })
+}
 
 module.exports = {
     selectGoods,
@@ -134,5 +145,6 @@ module.exports = {
     updateList,
     selectShopCarId,
     insertShopCarId,
-    updateShopCarId
+    updateShopCarId,
+    shopCarCount,
 }
