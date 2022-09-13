@@ -26,10 +26,7 @@ function checkUser(obj: IData): Promise<[]> {
     })
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> eb39c9b3cd888d4dee3ccc69da5eb06eb0b5f48d
 function regUser(data: IData): Promise<boolean> {
 
     let sql = `insert into user(username,password) values('${data.username}','${data.password}')`;
@@ -44,17 +41,8 @@ function regUser(data: IData): Promise<boolean> {
         })
     })
 }
-<<<<<<< HEAD
 
 module.exports = {
-
-=======
-
-
-
-
-module.exports = {
->>>>>>> eb39c9b3cd888d4dee3ccc69da5eb06eb0b5f48d
     checkUser,
     regUser
 }
