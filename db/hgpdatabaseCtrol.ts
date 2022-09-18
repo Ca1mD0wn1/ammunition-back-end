@@ -26,10 +26,6 @@ function checkUser(obj: IData): Promise<[]> {
     })
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> eb39c9b3cd888d4dee3ccc69da5eb06eb0b5f48d
 function regUser(data: IData): Promise<boolean> {
 
     let sql = `insert into user(username,password) values('${data.username}','${data.password}')`;
@@ -45,17 +41,84 @@ function regUser(data: IData): Promise<boolean> {
         })
     })
 }
-<<<<<<< HEAD
+
+// 查询分类数据
+
+function getClassData(): Promise<[]> {
+
+    let sql = `select * from classification`;
+
+    return new Promise(function (resovle, reject) {
+        db.query(sql, function (error, result, fields) {
+            if (error) {
+                reject(error);
+            } else {
+                resovle(result);
+            }
+        })
+    })
+}
+
+function getClassDataSort(flag): Promise<[]> {
+    let sql = '';
+    console.log('flag', flag);
+
+    if (flag == 'false') {
+        sql = `select * from classification order by price ASC`;
+    } else if (flag == 'true') {
+        sql = `select * from classification order by price DESC`;
+
+    }
+
+
+    return new Promise(function (resovle, reject) {
+        db.query(sql, function (error, result, fields) {
+            if (error) {
+                reject(error);
+            } else {
+                resovle(result);
+            }
+        })
+    })
+}
+
+function getClassDataSection(start, end): Promise<[]> {
+    let sql = `select *from classification where price between ${start} and ${end}`;
+
+
+
+    return new Promise(function (resovle, reject) {
+        db.query(sql, function (error, result, fields) {
+            if (error) {
+                reject(error);
+            } else {
+                resovle(result);
+            }
+        })
+    })
+}
+function getClassDataComment(): Promise<[]> {
+    let sql = `select * from classification order by judge desc`;
+
+
+
+    return new Promise(function (resovle, reject) {
+        db.query(sql, function (error, result, fields) {
+            if (error) {
+                reject(error);
+            } else {
+                resovle(result);
+            }
+        })
+    })
+}
 
 module.exports = {
 
-=======
-
-
-
-
-module.exports = {
->>>>>>> eb39c9b3cd888d4dee3ccc69da5eb06eb0b5f48d
     checkUser,
-    regUser
+    regUser,
+    getClassData,
+    getClassDataSort,
+    getClassDataSection,
+    getClassDataComment
 }

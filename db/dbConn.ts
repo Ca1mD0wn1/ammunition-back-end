@@ -1,11 +1,11 @@
 const mysql = require("mysql");
 // 创建数据库的连接
 const connection = mysql.createConnection({
-    host: '10.12.152.2',
+    host: '127.0.0.1',
     port: 3306,
     user: "root",
     password: "root",
-    database: "cxl1"
+    database: "第二阶段项目"
 })
 // 连接数据库
 connection.connect();

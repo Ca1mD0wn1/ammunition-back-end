@@ -7,7 +7,7 @@ router.get('/', async function (req, res, next) {
     let username = req.query.username;
 
 
-    console.log('username', username);
+    // console.log('username', username);
 
     // 2.连接数据库
 
@@ -15,7 +15,7 @@ router.get('/', async function (req, res, next) {
         let result = await databaseCtrol.checkUser({
             username,
         });
-        console.log(result);
+        // console.log(result);
 
         if (result.length == 1) {
             res.json({
@@ -27,7 +27,7 @@ router.get('/', async function (req, res, next) {
             })
         }
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         res.json({
             status: 'error',
         })

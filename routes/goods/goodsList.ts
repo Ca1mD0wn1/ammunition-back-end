@@ -7,7 +7,7 @@ router.post("/", async function (req, res) {
         let result = await databaseCtrolgoodsList.selectGoods();
         res.send(result);
     } catch (err) {
-        console.log("goodsList.ts_err", err);
+        // console.log("goodsList.ts_err", err);
         res.json({
             status: "error",
         })

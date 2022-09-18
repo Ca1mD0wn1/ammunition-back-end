@@ -8,7 +8,7 @@ router.post("/", async function (req, res) {
         let result = await databaseCtrolshopCarCount.shopCarCount();
         res.json(result);
     } catch (err) {
-        console.log("shopCarCount_err", err);
+        // console.log("shopCarCount_err", err);
         res.json({
             status: "error",
         })

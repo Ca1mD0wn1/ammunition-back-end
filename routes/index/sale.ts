@@ -6,7 +6,7 @@ router.post("/", async (req, res) => {
 
     try {
         let data = await databaseCtrolgoodsListindex.selectGoods();
-        console.log("data", data);
+        // console.log("data", data);
 
         res.json({
             status: "success",

@@ -10,10 +10,10 @@ interface IData {
 
 router.post('/', async function (req, res, next) {
     // 1.处理数据
-    console.log(req.body);
+    // console.log(req.body);
 
     let obj: IData = getData(req);
-    console.log(obj.password);
+    // console.log(obj.password);
     let salt = bcrypt.genSaltSync(10);
     obj.password = bcrypt.hashSync(obj.password, salt);
 

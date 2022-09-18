@@ -7,7 +7,7 @@ router.post("/", async function (req, res) {
         let result = await databaseCtrolSelectList.selectList();
         res.send(result);
     } catch (err) {
-        console.log("selectList.ts_err", err);
+        // console.log("selectList.ts_err", err);
         res.json({
             status: "error",
         })

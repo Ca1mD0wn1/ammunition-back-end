@@ -13,20 +13,25 @@ router.post('/', async function (req, res, next) {
     try {
 
         let result = await databaseCtrol.checkUser(obj);
-        console.log('aaa', req.body, result[0].password);
+        // console.log('aaa', req.body, result[0].password);
 
         let isMatch = bcrypt.compareSync(req.body.password, result[0].password);
-        console.log('isMatch', isMatch);
+        // console.log('isMatch', isMatch);
+        console.log(result);
 
         if (result.length == 1 && result[0].username == obj.username) {
             if (isMatch) {
                 let token = jwt.sign(obj.username, '__清酒__');
-                console.log(token);
+                // console.log(token);
 
                 res.json({
                     status: 'success',
                     level: result[0].level,
                     token,
+                })
+            } else {
+                res.json({
+                    status: 'passwordError',
                 })
             }
         } else {

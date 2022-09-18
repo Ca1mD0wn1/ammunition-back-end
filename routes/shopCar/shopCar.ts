@@ -10,7 +10,7 @@ router.post("/", async function (req, res) {
         let result = await databaseCtrolshopCar.selectShopCar(goods_id);
         res.json(result);
     } catch (err) {
-        console.log("goodsList.ts_err", err);
+        // console.log("goodsList.ts_err", err);
         res.json({
             status: "error",
         })
