@@ -137,6 +137,20 @@ function shopCarCount(): Promise<boolean> {
     })
 }
 
+
+function deleteShopCar(goods_id: number): Promise<boolean> {
+    let sqlStr = 'DELETE * FROM goods where goods_id ='
+    sqlStr += goods_id;
+    return new Promise(function (resolve, reject) {
+        dbConn.query(sqlStr, function (err, result) {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(result)
+            }
+        })
+    })
+}
 module.exports = {
     selectGoods,
     selectGoodsDescribe,
@@ -147,4 +161,5 @@ module.exports = {
     insertShopCarId,
     updateShopCarId,
     shopCarCount,
+    deleteShopCar
 }

@@ -35,7 +35,6 @@ function regUser(data: IData): Promise<boolean> {
             if (error) {
                 reject(false);
             } else {
-                console.log('result', result);
                 resovle(true);
             }
         })
